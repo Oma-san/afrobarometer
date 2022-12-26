@@ -14,7 +14,7 @@ class Wrangler:
         df: The dataframe that is loaded
         meta: Information about the data
         """
-        self.df, self.meta  = df, meta 
+        self.df, self.meta  = df, meta
 
     def wrangle(self, columns, rename):
         """Wrangles the dataframe to have get the required columns.
@@ -40,6 +40,28 @@ class Wrangler:
 
         # Rename columns
         df_new.columns = rename
+
+        # Return DataFrame
+        return df_new
+    def remove(self, columns, df_new=df_new):
+        """Removes the values that are unimportant.
+
+        Parameters
+        ----------
+        columns : List
+            List of columns that need to be extracted from the DataFrame
+
+        Returns
+        -------
+        DataFrame
+            Dataframe with extracted columns.
+        """
+        remove = ["Don't know","Don’t know","Refused","Do not understand question"]
+        columns = columns
+
+        for j in columns:
+            for i in remove:
+                df_new = df_new.loc[df_new[j] != i]
 
         # Return DataFrame
         return df_new
