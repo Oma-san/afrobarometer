@@ -43,7 +43,7 @@ class Wrangler:
 
         # Return DataFrame
         return df_new
-    def remove(self, columns, df_new=df_new):
+    def remove(self, columns, df_new):
         """Removes the values that are unimportant.
 
         Parameters
@@ -65,3 +65,18 @@ class Wrangler:
 
         # Return DataFrame
         return df_new
+
+    def get_frequency(self, columns, df_new):
+        """Gets the normalized frequency of the values in each column.
+
+        Parameters
+        ----------
+        columns : List
+            List of columns that their value frequencies need to be gotten
+
+        Returns
+        -------
+        Nothing.
+        """
+        for i in columns:
+            print(df_new[i].value_counts(normalize=True))
