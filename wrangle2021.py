@@ -43,6 +43,11 @@ class Wrangler:
 
         # Return DataFrame
         return df_new
+
+        # Print df.head
+        df_new.head()
+
+
     def remove(self, columns, df_new):
         """Removes the values that are unimportant.
 
@@ -56,7 +61,7 @@ class Wrangler:
         DataFrame
             Dataframe with extracted columns.
         """
-        remove = ["Don't know","Don’t know","Refused","Do not understand question"]
+        remove = ["Not Applicable","Don't know","Don’t know","Refused","Do not understand question"]
         columns = columns
 
         for j in columns:
