@@ -56,6 +56,9 @@ class Wrangler:
         columns : List
             List of columns that need to be extracted from the DataFrame
 
+        df_new : DataFrame
+            Dataframe that contains the data
+
         Returns
         -------
         DataFrame
