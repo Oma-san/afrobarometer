@@ -64,7 +64,7 @@ class Wrangler:
         DataFrame
             Dataframe with extracted columns.
         """
-        remove = ["Not Applicable","Don't know","Don’t know","Refused","Do not understand question"]
+        remove = ["Not Applicable","Don't know","Don’t know","Refused","Do not understand question", "The country is not a democracy"]
         columns = columns
 
         for j in columns:
